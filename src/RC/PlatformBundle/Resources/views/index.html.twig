@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block stylesheets %}
+        {# On charge le CSS Bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    {% endblock %}
+</head>
+<body>
+<div class="well">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {{ form_errors(form) }}
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.title, "Titre original du film :", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.title) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.title, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.year, "Année de production :", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.year) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.year, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.releaseDate, "Date de sortie internationnale (dd-mm-yyyy) :", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.releaseDate) }}
+
+            <div class="col-sm-4">
+                {{ form_widget(form.releaseDate, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.duration, "Durée du film (minutes) :", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.duration) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.duration, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.country, "Pays de production", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.country) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.country, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.countryTwo, "Deuxième pays", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.countryTwo) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.countryTwo, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.countryThree, "Troisième pays", {'label_attr': {'class': 'col-md-3 control-label'}}) }}
+
+            {{ form_errors(form.countryThree) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.countryThree, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.synopsis, "Synopsis", {'label_attr': {'class': 'col-md-3'}}) }}
+
+            {{ form_errors(form.synopsis) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.synopsis, {'attr': {'class': 'col-md-12'}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.categories, "Catégorie(s) - ctrl pour choix multiple", {'label_attr': {'class': 'col-md-3'}}) }}
+
+            {{ form_errors(form.categories) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.categories, {'attr': {'class': ''}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.poster, "Ajouter une affiche", {'label_attr': {'class': 'col-md-3'}}) }}
+
+            {{ form_errors(form.poster) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.poster, {'attr': {'class': 'col-sm-12'}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-8">
+            {{ form_label(form.banner, "Ajouter une bannière", {'label_attr': {'class': 'col-md-3'}}) }}
+
+            {{ form_errors(form.banner) }}
+
+            <div class="col-md-4">
+                {{ form_widget(form.banner, {'attr': {'class': 'col-sm-12'}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-1">
+            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+        </div>
+    </div>
+
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+    <div>
+        <p>Il y a un total de {{ nbMovies }} films</p>
+    </div>
+</div>
+
+{% block javascripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>

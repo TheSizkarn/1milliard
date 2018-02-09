@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% if movie.poster is not null %}
+    <img
+            src="{{ asset(movie.poster.webPath) }}"
+            alt="{{ movie.poster.alt }}"
+            height="500"
+    />
+{% endif %}
+{% if movie.banner is not null %}
+    <img
+            src="{{ asset(movie.banner.webPath) }}"
+            alt="{{ movie.banner.alt }}"
+            height="500"
+    />
+{% endif %}
+    <p>Titre du film : {{ movie.title }}</p>
+    <p>Année de production : {{ movie.year }}</p>
+    <p>Date de sortie : {{ movie.releasedate|date('d/m/Y') }}</p>
+    <p>Pays de production : {{ movie.country }}</p>
+    <p></p>
+
+</body>
+</html>

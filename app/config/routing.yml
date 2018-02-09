@@ -1,0 +1,7 @@
+# rc_platform:
+#   resource: "@RCPlatformBundle/Resources/config/routing.yml"
+#   prefix:   /
+
+rc_platform:
+   resource: "@RCPlatformBundle/Controller"
+   type:   annotation
