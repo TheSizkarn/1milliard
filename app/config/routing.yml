@@ -5,3 +5,14 @@
 rc_platform:
    resource: "@RCPlatformBundle/Controller"
    type:   annotation
+
+login:
+   path: /login
+   defaults:
+       _controller: RCUserBundle:Security:login
+
+login_check:
+   path: /login_check
+
+logout:
+   path: /logout
