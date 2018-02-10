@@ -47,7 +47,7 @@ class Movie
     /**
      * @var int
      *
-     * @ORM\Column(name="duration", type="integer")
+     * @ORM\Column(name="duration", type="integer", nullable=true)
      */
     private $duration;
 
@@ -76,21 +76,21 @@ class Movie
     /**
      * @var string
      *
-     * @ORM\Column(name="country_two", type="string", length=255)
+     * @ORM\Column(name="country_two", type="string", length=255, nullable=true)
      */
     private $countryTwo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="country_three", type="string", length=255)
+     * @ORM\Column(name="country_three", type="string", length=255, nullable=true)
      */
     private $countryThree;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="release_date", type="date")
+     * @ORM\Column(name="release_date", type="date", nullable=true)
      */
     private $releaseDate;
 

@@ -2,6 +2,7 @@
 
 namespace RC\PlatformBundle\Form;
 
+use RC\PlatformBundle\Repository\CategoryRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
@@ -47,8 +48,14 @@ class MovieType extends AbstractType
             ->add('categories', EntityType::class, array(
                 'class'        => 'RCPlatformBundle:Category',
                 'choice_label' => 'name',
+                'label_attr' => array('class' => 'checkbox-inline'),
                 'multiple'     => true,
+                'expanded' => true,
                 'required' => true,
+                'query_builder' => function (CategoryRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->orderBy('c.name', 'ASC');
+                }
             ))
             ->add('poster', PosterType::class)
             ->add('banner', BannerType::class, array(

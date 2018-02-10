@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * Class FormController
@@ -19,6 +21,7 @@ class FormController extends Controller
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/", name="rc_platform_homepage", methods={"POST", "GET"})
+     * @IsGranted("IS_AUTHENTICATED_REMEMBERED")
      */
     public function addAction(Request $request)
     {
@@ -52,7 +55,7 @@ class FormController extends Controller
 
     /**
      * @param $id
-     * @Route("/{id}", name="rc_platform_view", methods={"POST", "GET"})
+     * @Route("/movie/{id}", name="rc_platform_view", methods={"POST", "GET"})
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function viewAction($id)
