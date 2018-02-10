@@ -5,6 +5,7 @@ namespace RC\PlatformBundle\Controller;
 use RC\PlatformBundle\Entity\Movie;
 use RC\PlatformBundle\Form\MovieType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
